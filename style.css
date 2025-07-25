@@ -1,0 +1,342 @@
+html, body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(180deg, #3a4ed7 0%, #1a1a3a 100%), url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 700 Q400 600 800 700 T1600 700 V900 H0 Z" fill="%233a4ed7" fill-opacity="0.18"/><path d="M0 600 Q400 500 800 600 T1600 600 V900 H0 Z" fill="%2300ff99" fill-opacity="0.10"/><path d="M0 800 Q400 850 800 800 T1600 800 V900 H0 Z" fill="%235865f2" fill-opacity="0.13"/></svg>');
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body::before, body::after {
+    content: none;
+}
+@keyframes floatGlow {
+    0% { transform: scale(1) translateY(0) rotate(0deg); opacity: 0.45; }
+    40% { transform: scale(1.08) translateY(30px) rotate(8deg); opacity: 0.55; }
+    60% { transform: scale(0.97) translateY(-20px) rotate(-6deg); opacity: 0.38; }
+    100% { transform: scale(1.04) translateY(10px) rotate(3deg); opacity: 0.45; }
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px 16px 16px 16px;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.logo {
+    width: 56px;
+    height: 56px;
+    background: #fff2;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+.app-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.telegram {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: #fff;
+    background: #5865f2;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+.telegram:hover {
+    background: #4250c7;
+}
+.desc {
+    margin: 32px 0 16px 0;
+    font-size: 1.3rem;
+    line-height: 1.5;
+}
+.features {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+.feature {
+    background: #fff1;
+    border-radius: 12px;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.star {
+    color: gold;
+    font-size: 1.3rem;
+}
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: flex-start;
+}
+.screenshots {
+    flex: 2;
+    display: flex;
+    gap: 12px;
+    flex-wrap: nowrap;
+    min-width: 220px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #5865f2 #222a;
+    justify-content: center;
+}
+.screenshots::-webkit-scrollbar {
+    height: 8px;
+}
+.screenshots::-webkit-scrollbar-thumb {
+    background: #5865f2;
+    border-radius: 4px;
+}
+.screenshots::-webkit-scrollbar-track {
+    background: #222a;
+}
+.screenshot {
+    width: 110px;
+    height: 220px;
+    background: #fff2;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff8;
+    font-size: 1.1rem;
+    flex: 0 0 auto;
+}
+.qr-block {
+    flex: 1;
+    min-width: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+.qr {
+    width: 120px;
+    height: 120px;
+    background: #fff;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+    font-size: 1.2rem;
+}
+.rustore-btn {
+    margin-top: 8px;
+    background: #0077ff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.rustore-btn:hover {
+    background: #005fcc;
+}
+.creator-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    box-sizing: border-box;
+    transition: min-height 0.7s cubic-bezier(.4,2,.6,1);
+    background: linear-gradient(120deg, rgba(30,40,120,0.22) 0%, rgba(60,80,200,0.12) 100%);
+    box-shadow: 0 8px 48px #0003;
+    overflow: visible !important;
+    /* Скрыть скроллбар, но оставить прокрутку */
+    scrollbar-width: none; /* Firefox */
+}
+.creator-header::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+.creator-block {
+    background: rgba(20,24,60,0.55);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px #0005;
+    padding: 36px 32px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto;
+    animation: fadein 1.2s;
+}
+@keyframes fadein {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: none; }
+}
+.creator-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 6px #00ff99cc, 0 0 32px #00ff9955;
+    border: 3px solid #fff3;
+    margin-bottom: 12px;
+    background: #222;
+    animation: glow 2.5s infinite alternate;
+}
+@keyframes glow {
+    from { box-shadow: 0 0 0 6px #00ff99cc, 0 0 32px #00ff9955; }
+    to { box-shadow: 0 0 0 12px #00ff9955, 0 0 48px #00ff9922; }
+}
+.creator-title {
+    font-size: 2.7rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    color: #fff;
+    text-shadow: 0 2px 16px #00ff9955;
+    animation: fadein 1.2s;
+}
+.creator-name {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #fff;
+    text-shadow: 0 0 8px #00ff99, 0 0 2px #fff;
+    margin-bottom: 6px;
+    animation: fadein 1.6s 0.2s both;
+}
+.creator-slogan {
+    font-size: 1.13rem;
+    color: #00ff99;
+    margin-bottom: 0;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-align: center;
+    animation: fadein 1.8s 0.4s both;
+}
+/* --- Кастомный анимированный скроллбар для всего сайта --- */
+/* УДАЛЕНО: body::-webkit-scrollbar, body::-webkit-scrollbar-thumb, body::-webkit-scrollbar-track, @keyframes scrollbar-glow */
+/* Firefox */
+body {
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+}
+
+/* --- Scroll Reveal эффект как на reactbits.dev --- */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(10px) scale(0.96);
+  filter: blur(12px);
+  transition:
+    opacity 1.5s cubic-bezier(.22,1,.32,1),
+    transform 1.5s cubic-bezier(.22,1,.32,1),
+    filter 1.2s cubic-bezier(.22,1,.32,1);
+  will-change: opacity, transform, filter;
+  backface-visibility: hidden;
+  contain: layout paint;
+}
+.scroll-reveal.in-view {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+/* Кастомный красивый скроллбар для всей страницы */
+html::-webkit-scrollbar {
+  width: 10px;
+  background: #232a5a;
+}
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, #5865f2 30%, #00ff99 100%);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0004;
+}
+html::-webkit-scrollbar-track {
+  background: #232a5a;
+  border-radius: 8px;
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #5865f2 #232a5a;
+}
+@media (max-width: 700px) {
+    .main-content {
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+    }
+    .screenshots {
+        justify-content: center;
+        width: 100%;
+    }
+    .qr-block {
+        flex: unset;
+        min-width: unset;
+        width: 100%;
+        align-items: center;
+        margin-top: 24px;
+    }
+    .qr {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 18px;
+    }
+    .rustore-btn {
+        width: 90vw;
+        max-width: 340px;
+        font-size: 1.18rem;
+        padding: 16px 0;
+        justify-content: center;
+    }
+}
+@media (max-width: 600px) {
+    .telegram span {
+        display: none;
+    }
+    .creator-block {
+        padding: 18px 8px 18px 8px;
+        max-width: 98vw;
+    }
+    .creator-photo {
+        width: 80px;
+        height: 80px;
+    }
+    .creator-title {
+        font-size: 2rem;
+    }
+    .creator-name {
+        font-size: 1.2rem;
+    }
+} 
