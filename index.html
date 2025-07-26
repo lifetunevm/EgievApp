@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeTune — персональный помощник для здоровья и продуктивности</title>
+    <meta name="description" content="LifeTune — ваш персональный помощник для здоровья, сна, привычек и продуктивности. Трекер привычек, анализ сна, фитнес-трекер и умные напоминания в одном приложении.">
+    <meta name="keywords" content="LifeTune, здоровье, привычки, сон, продуктивность, фитнес, трекер, приложение">
+    <meta name="author" content="Egiev Magomed">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://lifetune.app/">
+    <meta property="og:title" content="LifeTune — персональный помощник">
+    <meta property="og:description" content="Ваш персональный помощник для здоровья, сна, привычек и продуктивности">
+    <meta property="og:image" content="logo/logo.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://lifetune.app/">
+    <meta property="twitter:title" content="LifeTune — персональный помощник">
+    <meta property="twitter:description" content="Ваш персональный помощник для здоровья, сна, привычек и продуктивности">
+    <meta property="twitter:image" content="logo/logo.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="logo/logo.jpg">
+    <link rel="apple-touch-icon" href="logo/logo.jpg">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Индикатор прогресса чтения -->
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="creator-header" id="creatorHeader">
+        <!-- Анимированный фоновый код в стиле IDE -->
+        <div class="matrix-background" id="matrixBackground"></div>
+        
+        <!-- Плавающие элементы кода -->
+        <div class="floating-code" id="floatingCode1"></div>
+        <div class="floating-code" id="floatingCode2"></div>
+        <div class="floating-code" id="floatingCode3"></div>
+        
+        <!-- Сетка соединений -->
+        <div class="connection-grid" id="connectionGrid"></div>
+        
+        <!-- Анимированные частицы кода -->
+        <div class="code-particles" id="codeParticles"></div>
+        
+        <div class="creator-block">
+            <div class="creator-title">Creator</div>
+            <div class="creator-name" id="nameDecode">Egiev Magomed</div>
+            <div class="creator-slogan">AI Developer & Product Creator</div>
+            <img class="creator-photo" src="Images/i am.jpg" alt="face">
+            <div class="creator-stack" style="margin-top:14px; text-align:center; color:#b6ffe0; font-size:1.02rem; letter-spacing:0.2px;">
+                <b>Backend:</b> Java (Android Studio)<br>
+                <b>Frontend:</b> JS, HTML, CSS
+            </div>
+        </div>
+    </div>
+    <!-- Header Section -->
+    <div class="header-section">
+        <div class="container">
+            <div class="header scroll-reveal" data-reveal-idx="0">
+                <div class="logo-title">
+                    <div class="logo"><img src="logo/logo.jpg" alt="LifeTune Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px;"></div>
+                    <div class="app-title">LifeTune</div>
+                </div>
+                <a class="telegram" href="https://t.me/lnterlla" target="_blank">
+                    <img src="logo/telegram_logo.ico" alt="Telegram" style="width:22px;height:22px;vertical-align:middle;margin-right:7px;">
+                    <span>Telegram</span>
+                </a>
+            </div>
+            <div class="desc scroll-reveal" data-reveal-idx="1">
+                LifeTune — ваш персональный помощник для здоровья, сна, привычек и продуктивности!
+            </div>
+            <div class="features scroll-reveal" data-reveal-idx="2">
+                <div class="feature">Бесплатный PRO — за просмотр рекламы</div>
+                <div class="feature"><span class="star">★</span> 4.9 / 5</div>
+                <div class="feature">Бесплатно</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content Section -->
+    <div class="container">
+        <div class="main-content scroll-reveal" data-reveal-idx="3">
+            <div class="screenshots">
+                <div class="screenshot" data-img="Images/1.png"><img src="Images/1.png" alt="Скриншот 1" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"></div>
+                <div class="screenshot" data-img="Images/2.png"><img src="Images/2.png" alt="Скриншот 2" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"></div>
+                <div class="screenshot" data-img="Images/4.png"><img src="Images/4.png" alt="Скриншот 3" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"></div>
+                <div class="screenshot" data-img="Images/5.png"><img src="Images/5.png" alt="Скриншот 4" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"></div>
+                <div class="screenshot" data-img="Images/6.png"><img src="Images/6.png" alt="Скриншот 5" style="width:100%;height:100%;object-fit:cover;border-radius:16px;"></div>
+            </div>
+            <div class="qr-block">
+                <div class="qr"><img src="Images/QR-код.png" alt="QR-код" style="width:100%;height:100%;object-fit:contain;border-radius:12px;"></div>
+                <a class="rustore-btn" href="https://www.rustore.ru/catalog/app/com.example.lifetune" target="_blank">
+                    <img src="logo/RuStore.webp" alt="RuStore" style="width:28px;height:28px;object-fit:contain;vertical-align:middle;">
+                    <span>Скачать из</span>
+                    <b>RuStore</b>
+                </a>
+            </div>
+            <div class="app-description scroll-reveal" data-reveal-idx="4" style="margin: 32px 0 0 0; font-size: 1.13rem; line-height: 1.7; background: #fff1; border-radius: 14px; padding: 24px 28px; color: #fff; width: 100%; max-width: 900px; box-sizing: border-box;">
+                <b style="font-size:1.18rem;">Описание</b><br><br>
+                <b>LifeTune — ваш персональный помощник для здоровья, сна, привычек и продуктивности!</b><br><br>
+                Приложение объединяет трекер привычек, анализ сна, фитнес-трекер, умные напоминания, заметки и голосового ассистента.<br>
+                Следите за своим прогрессом, ставьте цели, записывайте важные мысли и управляйте своим здоровьем и образом жизни в одном удобном месте.<br><br>
+                <b>Возможности LifeTune:</b>
+                <ul style="margin: 10px 0 10px 24px;">
+                    <li>Трекер привычек и целей</li>
+                    <li>Анализ и статистика сна</li>
+                    <li>Фитнес и тренировки</li>
+                    <li>Умные напоминания и планировщик</li>
+                    <li>Ведение заметок и дневника</li>
+                    <li>Голосовой ассистент для быстрого управления</li>
+                    <li>Мотивационные цитаты и поддержка</li>
+                </ul>
+                LifeTune поможет вам стать лучше каждый день — начните свой путь к здоровью и продуктивности уже сейчас!<br><br>
+                <span style="color:#ffd;">По всем вопросам: <a href="mailto:lifetunesup@gmail.com" style="color:#aaf;">lifetunesup@gmail.com</a> <img src="logo/mail.png" alt="mail" style="width:20px;height:20px;vertical-align:middle;margin-left:4px;"></span>
+            </div>
+            <div class="app-updates scroll-reveal" data-reveal-idx="5" style="margin: 32px 0 0 0; font-size: 1.08rem; line-height: 1.6; background: #fff1; border-radius: 14px; padding: 22px 26px; color: #fff; width: 100%; max-width: 900px; box-sizing: border-box;">
+                <b style="font-size:1.18rem;">Обновления версий</b><br><br>
+                <b>Что нового в версии 1.2</b>
+                <ul style="margin: 10px 0 10px 24px;">
+                    <li>Исправлена критическая ошибка при открытии экрана профиля, из-за которой приложение могло вылетать на некоторых устройствах.</li>
+                    <li>Исправлен баг с ассистентом: теперь приложение больше не вылетает с ошибкой, при запуске голосового помощника или распознавании речи.</li>
+                    <li>Улучшена стабильность работы ассистента и экрана профиля.</li>
+                    <li>Мелкие внутренние улучшения и оптимизация кода.</li>
+                </ul>
+            </div>
+            
+            <!-- Секция отзывов пользователей -->
+            <div class="testimonials scroll-reveal" data-reveal-idx="6" style="margin: 32px 0 0 0; width: 100%; max-width: 900px; box-sizing: border-box;">
+                <h3 style="font-size:1.18rem; margin-bottom: 24px; text-align: center; color: #fff;">Отзывы пользователей</h3>
+                <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    <div class="testimonial" style="background: #fff1; border-radius: 14px; padding: 20px; border-left: 4px solid #00ff99;">
+                        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                            <div style="width: 40px; height: 40px; background: #00ff99; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-weight: bold; color: #1a1a3a;">Э</div>
+                            <div>
+                                <div style="font-weight: bold; color: #fff;">Элина</div>
+                                <div style="font-size: 0.9rem; color: #ffd;">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p style="margin: 0; line-height: 1.5; color: #fff;">Отличное приложение! Помогло мне выработать полезные привычки и улучшить качество сна. Интерфейс интуитивный и приятный.</p>
+                    </div>
+                    
+                    <div class="testimonial" style="background: #fff1; border-radius: 14px; padding: 20px; border-left: 4px solid #5865f2;">
+                        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                            <div style="width: 40px; height: 40px; background: #5865f2; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-weight: bold; color: #fff;">Э</div>
+                            <div>
+                                <div style="font-weight: bold; color: #fff;">Эмиль</div>
+                                <div style="font-size: 0.9rem; color: #ffd;">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p style="margin: 0; line-height: 1.5; color: #fff;">Использую несколько дней. Голосовой ассистент очень удобен, а статистика сна помогла понять, что влияет на качество отдыха.</p>
+                    </div>
+                    
+                    <div class="testimonial" style="background: #fff1; border-radius: 14px; padding: 20px; border-left: 4px solid #00ff99;">
+                        <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                            <div style="width: 40px; height: 40px; background: #00ff99; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-weight: bold; color: #1a1a3a;">U</div>
+                            <div>
+                                <div style="font-weight: bold; color: #fff;">User</div>
+                                <div style="font-size: 0.9rem; color: #ffd;">⭐⭐⭐⭐⭐</div>
+                            </div>
+                        </div>
+                        <p style="margin: 0; line-height: 1.5; color: #fff;">Лучшее приложение для трекинга привычек! Мотивационные цитаты и умные напоминания помогают не сбиваться с пути.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                LifeTune — ваш персональный помощник для здоровья, сна, привычек и продуктивности
+            </div>
+            <div class="footer-links">
+                <a href="https://t.me/lnterlla" class="footer-link" target="_blank">Telegram</a>
+                <a href="https://www.rustore.ru/catalog/app/com.example.lifetune" class="footer-link" target="_blank">RuStore</a>
+                <a href="mailto:lifetunesup@gmail.com" class="footer-link">Поддержка</a>
+            </div>
+            <div class="footer-copyright">
+                © 2024 LifeTune. Все права защищены.  <br> Created by Egiev Magomed
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Кнопка "Наверх" -->
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Прокрутить наверх">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+    <!-- Модальное окно для просмотра скриншотов с навигацией -->
+    <div id="modal" style="display:none;position:fixed;z-index:1000;top:0;left:0;width:100vw;height:100vh;background:rgba(20,20,40,0.85);align-items:center;justify-content:center;">
+        <span id="modal-close" style="position:absolute;top:32px;right:48px;font-size:2.5rem;color:#fff;cursor:pointer;font-weight:bold;z-index:1001;">&times;</span>
+        <span id="modal-prev" style="position:absolute;left:5vw;top:50%;transform:translateY(-50%);font-size:3.5rem;color:#fff;cursor:pointer;user-select:none;z-index:1001;opacity:0.8;transition:opacity 0.2s;">&#8592;</span>
+        <img id="modal-img" src="" alt="Скриншот" style="max-width:90vw;max-height:85vh;border-radius:18px;box-shadow:0 8px 32px #0008;z-index:1001;">
+        <span id="modal-next" style="position:absolute;right:5vw;top:50%;transform:translateY(-50%);font-size:3.5rem;color:#fff;cursor:pointer;user-select:none;z-index:1001;opacity:0.8;transition:opacity 0.2s;">&#8594;</span>
+    </div>
+    <audio id="codeAudio" src="mp3/song_code.mp3"></audio>
+    <script>
+    // --- Галерея скриншотов с навигацией ---
+    const screenshots = [
+      'Images/1.png',
+      'Images/2.png',
+      'Images/4.png',
+      'Images/5.png',
+      'Images/6.png'
+    ];
+    let currentIndex = 0;
+    function openModal(index) {
+      currentIndex = index;
+      document.getElementById('modal-img').src = screenshots[currentIndex];
+      document.getElementById('modal').style.display = 'flex';
+    }
+    document.querySelectorAll('.screenshot').forEach(function(el, idx) {
+      el.addEventListener('click', function() {
+        openModal(idx);
+      });
+    });
+    function closeModal() {
+      document.getElementById('modal').style.display = 'none';
+      document.getElementById('modal-img').src = '';
+    }
+    document.getElementById('modal-close').onclick = closeModal;
+    document.getElementById('modal').onclick = function(e) {
+      if (e.target === this) closeModal();
+    };
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + screenshots.length) % screenshots.length;
+      document.getElementById('modal-img').src = screenshots[currentIndex];
+    }
+    function showNext() {
+      currentIndex = (currentIndex + 1) % screenshots.length;
+      document.getElementById('modal-img').src = screenshots[currentIndex];
+    }
+    document.getElementById('modal-prev').onclick = function(e) {
+      e.stopPropagation();
+      showPrev();
+    };
+    document.getElementById('modal-next').onclick = function(e) {
+      e.stopPropagation();
+      showNext();
+    };
+    // Стрелки становятся чуть прозрачнее при наведении
+    ['modal-prev','modal-next'].forEach(id=>{
+      const el=document.getElementById(id);
+      el.onmouseover=()=>el.style.opacity='1';
+      el.onmouseout=()=>el.style.opacity='0.8';
+    });
+    // Эффект "цифрового дождя" для фото
+    const codeAudio = document.getElementById('codeAudio');
+    function playCodeAudio() {
+      codeAudio.currentTime = 0;
+      codeAudio.play().catch(()=>{});
+    }
+    function stopCodeAudio() {
+      codeAudio.pause();
+      codeAudio.currentTime = 0;
+    }
+    playCodeAudio();
+    const faceRain = document.getElementById('faceRain');
+    const facePhoto = document.getElementById('facePhoto');
+    let runningFace = true;
+    let faceRows = 22, faceCols = 38;
+    let rainLine = 0;
+    function renderFaceRain() {
+      faceRain.innerHTML = '';
+      for (let i = 0; i < faceRows; ++i) {
+        const row = document.createElement('div');
+        row.style.display = 'flex';
+        row.style.lineHeight = '1.18';
+        row.style.fontSize = '1.18rem';
+        for (let j = 0; j < faceCols; ++j) {
+          const span = document.createElement('span');
+          if (i < rainLine) {
+            span.textContent = ' ';
+            span.style.opacity = '0';
+          } else if (i === rainLine) {
+            span.textContent = Math.random() > 0.5 ? '1' : '0';
+            span.style.color = '#00ff99e0';
+            span.style.textShadow = '0 0 8px #00ff99,0 0 2px #fff';
+            span.style.opacity = '0.92';
+          } else {
+            span.textContent = Math.random() > 0.5 ? '1' : '0';
+            span.style.color = '#00ff9944';
+            span.style.opacity = '0.3';
+          }
+          row.appendChild(span);
+        }
+        faceRain.appendChild(row);
+      }
+      // Маска для проявления фото
+      facePhoto.style.clipPath = `inset(0px 0px ${((faceRows-rainLine)/faceRows)*100}% 0px)`;
+    }
+    function animateFaceRain() {
+      if (!runningFace) return;
+      renderFaceRain();
+      if (rainLine < faceRows) {
+        setTimeout(animateFaceRain, 120);
+        rainLine++;
+      } else {
+        runningFace = false;
+        facePhoto.style.clipPath = 'none';
+        // Даем фото полностью проявиться, затем только сужаем и показываем overlay
+        setTimeout(() => {
+          // Анимация сужения блока
+          const faceBlock = document.getElementById('faceBlock');
+          faceBlock.style.width = 'min(140px, 90vw)';
+          faceBlock.style.height = 'min(180px, 30vh)';
+          // Сужаем высоту всей шапки
+          document.getElementById('creatorHeader').style.minHeight = '40vh';
+          // Затемняем фото
+          let errorOverlay = document.createElement('div');
+          errorOverlay.style.position = 'absolute';
+          errorOverlay.style.left = '0';
+          errorOverlay.style.top = '0';
+          errorOverlay.style.width = '100%';
+          errorOverlay.style.height = '100%';
+          errorOverlay.style.background = 'rgba(10,10,20,0.92)';
+          errorOverlay.style.backdropFilter = 'blur(6px) brightness(0.5)';
+          errorOverlay.style.webkitBackdropFilter = 'blur(6px) brightness(0.5)';
+          errorOverlay.style.backgroundImage = 'repeating-linear-gradient(180deg, rgba(255,255,255,0.04) 0 2px, transparent 2px 8px), repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 6px)';
+          errorOverlay.style.zIndex = '3';
+          errorOverlay.id = 'errorOverlay';
+          errorOverlay.style.display = 'flex';
+          errorOverlay.style.flexDirection = 'column';
+          errorOverlay.style.alignItems = 'center';
+          errorOverlay.style.justifyContent = 'center';
+          // Loader (крутящийся полукруг)
+          let loader = document.createElement('div');
+          loader.style.width = '48px';
+          loader.style.height = '48px';
+          loader.style.border = '6px solid #ff2222';
+          loader.style.borderTop = '6px solid transparent';
+          loader.style.borderRadius = '50%';
+          loader.style.animation = 'spin-loader 1s linear infinite';
+          loader.style.marginBottom = '18px';
+          errorOverlay.appendChild(loader);
+          // Надпись 'Дац фотк'
+          let errorText = document.createElement('div');
+          errorText.textContent = 'Дац фотк';
+          errorText.style.color = '#ff2222';
+          errorText.style.fontWeight = 'bold';
+          errorText.style.fontSize = '1.2rem';
+          errorText.style.textShadow = '0 0 8px #ff2222, 0 0 2px #fff';
+          errorText.style.letterSpacing = '2px';
+          errorOverlay.appendChild(errorText);
+          faceRain.parentElement.appendChild(errorOverlay);
+          // Оставляем бегущие цифры на фоне
+          let matrixInterval = setInterval(() => {
+            renderFaceRain();
+          }, 120);
+          // Останавливаем звук
+          stopCodeAudio();
+          // Добавляем анимацию мигания
+          const style = document.createElement('style');
+          style.innerHTML = `@keyframes spin-loader { 0%{transform:rotate(0deg);} 100%{transform:rotate(360deg);} }`;
+          document.head.appendChild(style);
+        }, 1200);
+      }
+    }
+    renderFaceRain();
+    animateFaceRain();
+    // Анимация декодирования имени по буквам
+    const nameStr = 'Egiev Magomed';
+    const nameDecode = document.getElementById('nameDecode');
+    let nameState = Array.from(nameStr).map(ch => ({
+      char: ch,
+      done: ch === ' ' ? true : false,
+      digit: ch === ' ' ? ' ' : (Math.random() > 0.5 ? '1' : '0')
+    }));
+    function renderNameDecode() {
+      nameDecode.innerHTML = nameState.map(obj =>
+        obj.done ? `<span style='opacity:1;transition:opacity 0.3s;'>${obj.char}</span>`
+                 : `<span style='color:#00ff99e0;text-shadow:0 0 8px #00ff99,0 0 2px #fff;opacity:0.92;transition:opacity 0.3s;'>${obj.digit}</span>`
+      ).join('');
+    }
+    let runningName = true;
+    function animateNameDigits() {
+      if (!runningName) return;
+      // Обновляем только неоткрытые буквы
+      nameState.forEach(obj => {
+        if (!obj.done && obj.char !== ' ') obj.digit = Math.random() > 0.5 ? '1' : '0';
+      });
+      renderNameDecode();
+      setTimeout(animateNameDigits, 120);
+    }
+    renderNameDecode();
+    animateNameDigits();
+    // Поочередно "декодируем" буквы
+    nameState.forEach((obj, idx) => {
+      if (obj.char === ' ') return;
+      setTimeout(() => {
+        obj.done = true;
+        renderNameDecode();
+        if (idx === nameState.length - 1) runningName = false;
+      }, 1200 + idx * 180);
+    });
+    </script>
+    <script>
+    // --- Scroll Reveal эффект ---
+    function scrollReveal() {
+      document.querySelectorAll('.scroll-reveal').forEach((el) => {
+        // Чем ниже блок, тем больше задержка (idx берём из data-reveal-idx)
+        const idx = parseInt(el.dataset.revealIdx || '0', 10);
+        el.style.transitionDelay = (0.12 * idx) + 's';
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 60) {
+          el.classList.add('in-view');
+        }
+      });
+    }
+    window.addEventListener('scroll', scrollReveal);
+    window.addEventListener('DOMContentLoaded', scrollReveal);
+    
+    // --- Кнопка "Наверх" ---
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    function toggleScrollToTop() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    }
+    
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+    
+    window.addEventListener('scroll', toggleScrollToTop);
+    
+    // --- Улучшенная загрузка изображений ---
+    function preloadImages() {
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        if (img.complete) {
+          img.classList.remove('loading');
+        } else {
+          img.classList.add('loading');
+          img.addEventListener('load', () => {
+            img.classList.remove('loading');
+          });
+          img.addEventListener('error', () => {
+            img.classList.remove('loading');
+            img.style.opacity = '0.5';
+          });
+        }
+      });
+    }
+    
+    // --- Плавная прокрутка для всех ссылок ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // --- Улучшенная доступность ---
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+    
+    // --- Индикатор прогресса чтения ---
+    function updateProgressBar() {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.body.offsetHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      document.getElementById('progressBar').style.width = scrollPercent + '%';
+    }
+    
+    // --- Анимированный фоновый код в стиле IDE ---
+    function createMatrixBackground() {
+        const matrixBg = document.getElementById('matrixBackground');
+        const codeSnippets = [
+            '<span class="keyword">function</span> <span class="function">createAI</span>() {',
+            '  <span class="keyword">return</span> <span class="keyword">new</span> <span class="class">Promise</span>((resolve) => {',
+            '    <span class="keyword">const</span> <span class="variable">neural</span> = <span class="keyword">new</span> <span class="class">Network</span>();',
+            '    <span class="variable">neural</span>.<span class="function">train</span>(<span class="variable">data</span>);',
+            '    <span class="function">resolve</span>(<span class="variable">neural</span>);',
+            '  });',
+            '}',
+            '',
+            '<span class="keyword">class</span> <span class="class">LifeTune</span> {',
+            '  <span class="function">constructor</span>() {',
+            '    <span class="keyword">this</span>.<span class="variable">habits</span> = [];',
+            '    <span class="keyword">this</span>.<span class="variable">sleep</span> = <span class="keyword">new</span> <span class="class">SleepTracker</span>();',
+            '    <span class="keyword">this</span>.<span class="variable">assistant</span> = <span class="keyword">new</span> <span class="class">VoiceAI</span>();',
+            '  }',
+            '}',
+            '',
+            '<span class="keyword">async function</span> <span class="function">analyzeSleep</span>() {',
+            '  <span class="keyword">const</span> <span class="variable">data</span> = <span class="keyword">await</span> <span class="function">getSleepData</span>();',
+            '  <span class="keyword">return</span> <span class="function">processSleepPatterns</span>(<span class="variable">data</span>);',
+            '}',
+            '',
+            '<span class="keyword">const</span> <span class="variable">features</span> = {',
+            '  <span class="variable">habitTracking</span>: <span class="keyword">true</span>,',
+            '  <span class="variable">sleepAnalysis</span>: <span class="keyword">true</span>,',
+            '  <span class="variable">voiceAssistant</span>: <span class="keyword">true</span>,',
+            '  <span class="variable">fitnessTracker</span>: <span class="keyword">true</span>',
+            '};',
+            '',
+            '<span class="comment">// AI Development</span>',
+            '<span class="keyword">const</span> <span class="variable">model</span> = <span class="keyword">new</span> <span class="class">TensorFlow</span>();',
+            '<span class="variable">model</span>.<span class="function">compile</span>({',
+            '  <span class="variable">optimizer</span>: <span class="string">"adam"</span>,',
+            '  <span class="variable">loss</span>: <span class="string">"categorical_crossentropy"</span>',
+            '});',
+            '',
+            '<span class="comment">// Android Studio</span>',
+            '<span class="keyword">public class</span> <span class="class">MainActivity</span> {',
+            '  <span class="function">@Override</span>',
+            '  <span class="keyword">protected void</span> <span class="function">onCreate</span>() {',
+            '    <span class="function">super</span>.<span class="function">onCreate</span>(<span class="variable">savedInstanceState</span>);',
+            '    <span class="function">setContentView</span>(<span class="class">R</span>.<span class="variable">layout</span>.<span class="variable">activity_main</span>);',
+            '  }',
+            '}',
+            '',
+            '<span class="comment">// React Component</span>',
+            '<span class="keyword">const</span> <span class="class">App</span> = () => {',
+            '  <span class="keyword">const</span> [<span class="variable">state</span>, <span class="function">setState</span>] = <span class="function">useState</span>(<span class="keyword">null</span>);',
+            '  <span class="keyword">return</span> <span class="operator">&lt;</span><span class="class">div</span><span class="operator">&gt;</span>Hello<span class="operator">&lt;/</span><span class="class">div</span><span class="operator">&gt;</span>;',
+            '};',
+            '',
+            '<span class="comment">// Python ML</span>',
+            '<span class="keyword">import</span> <span class="variable">tensorflow</span> <span class="keyword">as</span> <span class="variable">tf</span>',
+            '<span class="variable">model</span> = <span class="function">tf.keras.Sequential</span>([',
+            '  <span class="function">tf.keras.layers.Dense</span>(<span class="number">128</span>, <span class="variable">activation</span>=<span class="string">\'relu\'</span>),',
+            '  <span class="function">tf.keras.layers.Dropout</span>(<span class="number">0.2</span>)',
+            ']);'
+        ];
+        
+        let html = '';
+        for (let i = 0; i < 20; i++) {
+            const snippet = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+            const left = Math.random() * 100;
+            const delay = Math.random() * 15;
+            const duration = 10 + Math.random() * 12;
+            
+            html += `<div class="code-line" style="left: ${left}%; animation-delay: ${delay}s; animation-duration: ${duration}s;">${snippet}</div>`;
+        }
+        matrixBg.innerHTML = html;
+    }
+    
+    function createFloatingCode() {
+        const floatingElements = [
+            document.getElementById('floatingCode1'),
+            document.getElementById('floatingCode2'),
+            document.getElementById('floatingCode3')
+        ];
+        
+        const codeBlocks = [
+            '<span class="keyword">const</span> <span class="variable">AI</span> = <span class="keyword">new</span> <span class="class">NeuralNetwork</span>();',
+            '<span class="keyword">async function</span> <span class="function">processData</span>() {',
+            '  <span class="keyword">return await</span> <span class="function">fetch</span>(<span class="string">"/api/data"</span>);',
+            '}',
+            '<span class="keyword">class</span> <span class="class">LifeTuneApp</span> {',
+            '  <span class="function">constructor</span>() {',
+            '    <span class="keyword">this</span>.<span class="function">init</span>();',
+            '  }',
+            '}',
+            '<span class="comment">// Machine Learning</span>',
+            '<span class="variable">model</span>.<span class="function">fit</span>(<span class="variable">trainingData</span>, {',
+            '  <span class="variable">epochs</span>: <span class="number">100</span>,',
+            '  <span class="variable">batchSize</span>: <span class="number">32</span>',
+            '});',
+            '<span class="keyword">public void</span> <span class="function">onCreate</span>() {',
+            '  <span class="function">super</span>.<span class="function">onCreate</span>(<span class="variable">savedInstanceState</span>);',
+            '  <span class="function">setContentView</span>(<span class="class">R</span>.<span class="variable">layout</span>.<span class="variable">main</span>);',
+            '}',
+            '<span class="keyword">const</span> <span class="variable">app</span> = <span class="keyword">new</span> <span class="class">Vue</span>({',
+            '  <span class="variable">el</span>: <span class="string">\'#app\'</span>,',
+            '  <span class="variable">data</span>: { <span class="variable">message</span>: <span class="string">\'Hello\'</span> }',
+            '});'
+        ];
+        
+        floatingElements.forEach((element, index) => {
+            const randomCode = codeBlocks[Math.floor(Math.random() * codeBlocks.length)];
+            element.innerHTML = randomCode;
+        });
+    }
+    
+    // Функция создания анимированных частиц кода
+    function createCodeParticles() {
+        const particlesContainer = document.getElementById('codeParticles');
+        const particleCount = 15;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 6 + 's';
+            particle.style.animationDuration = (4 + Math.random() * 4) + 's';
+            particlesContainer.appendChild(particle);
+        }
+    }
+    
+    // Функция создания эффекта печатающегося кода
+    function createTypingEffect() {
+        const typingContainer = document.createElement('div');
+        typingContainer.className = 'typing-effect';
+        typingContainer.style.cssText = `
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.7rem;
+            color: #00ff99;
+            opacity: 0.2;
+            z-index: 1;
+            pointer-events: none;
+            max-width: 300px;
+            line-height: 1.4;
+        `;
+        
+        const codeLines = [
+            '<span class="keyword">function</span> <span class="function">init</span>() {',
+            '  <span class="keyword">const</span> <span class="variable">app</span> = <span class="keyword">new</span> <span class="class">LifeTune</span>();',
+            '  <span class="variable">app</span>.<span class="function">start</span>();',
+            '  <span class="keyword">return</span> <span class="variable">app</span>;',
+            '}',
+            '',
+            '<span class="comment">// AI Assistant</span>',
+            '<span class="keyword">class</span> <span class="class">VoiceAI</span> {',
+            '  <span class="function">constructor</span>() {',
+            '    <span class="keyword">this</span>.<span class="variable">model</span> = <span class="keyword">new</span> <span class="class">NeuralNetwork</span>();',
+            '  }',
+            '}'
+        ];
+        
+        let currentLine = 0;
+        let currentChar = 0;
+        let isTyping = true;
+        
+        function typeNextChar() {
+            if (!isTyping) return;
+            
+            if (currentLine < codeLines.length) {
+                const line = codeLines[currentLine];
+                if (currentChar < line.length) {
+                    const char = line[currentChar];
+                    if (typingContainer.children[currentLine]) {
+                        typingContainer.children[currentLine].innerHTML += char;
+                    } else {
+                        const lineElement = document.createElement('div');
+                        lineElement.innerHTML = char;
+                        typingContainer.appendChild(lineElement);
+                    }
+                    currentChar++;
+                    setTimeout(typeNextChar, Math.random() * 50 + 20);
+                } else {
+                    currentLine++;
+                    currentChar = 0;
+                    setTimeout(typeNextChar, 200);
+                }
+            } else {
+                // Начинаем заново через некоторое время
+                setTimeout(() => {
+                    typingContainer.innerHTML = '';
+                    currentLine = 0;
+                    currentChar = 0;
+                    typeNextChar();
+                }, 3000);
+            }
+        }
+        
+        document.getElementById('creatorHeader').appendChild(typingContainer);
+        typeNextChar();
+    }
+    
+    // Добавляем CSS для матричного дождя
+    const matrixStyle = document.createElement('style');
+    matrixStyle.textContent = `
+        @keyframes matrixRain {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.2;
+            }
+            90% {
+                opacity: 0.2;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(matrixStyle);
+    
+    // Инициализация
+    document.addEventListener('DOMContentLoaded', () => {
+      preloadImages();
+      scrollReveal();
+      toggleScrollToTop();
+      updateProgressBar();
+      createMatrixBackground();
+      createFloatingCode();
+      createCodeParticles();
+      createTypingEffect();
+    });
+    
+    window.addEventListener('scroll', updateProgressBar);
+    </script>
+</body>
+</html>
