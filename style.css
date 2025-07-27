@@ -1,5 +1,6 @@
 html, body {
     margin: 0;
+    padding: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
     background: linear-gradient(180deg, #2a3a8f 0%, #1a1a3a 50%, #0f0f1a 100%), url('data:image/svg+xml;utf8,<svg width="100%25" height="100%25" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 700 Q400 600 800 700 T1600 700 V900 H0 Z" fill="%232a3a8f" fill-opacity="0.15"/><path d="M0 600 Q400 500 800 600 T1600 600 V900 H0 Z" fill="%2300ff99" fill-opacity="0.08"/><path d="M0 800 Q400 850 800 800 T1600 800 V900 H0 Z" fill="%235865f2" fill-opacity="0.10"/></svg>');
     color: #fff;
@@ -9,6 +10,7 @@ html, body {
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
+    box-sizing: border-box;
 }
 
 @keyframes gridMove {
@@ -352,6 +354,43 @@ body::before, body::after {
     box-shadow: 0 0 0 12px #00ff99cc, 0 0 60px #00ff9977, 0 0 100px #00ff9944;
 }
 
+/* Адаптивные стили для фото на мобильных */
+@media (max-width: 600px) {
+    .creator-photo {
+        border-width: 3px;
+        box-shadow: 0 0 0 6px #00ff99cc, 0 0 30px #00ff9955;
+    }
+    
+    .creator-photo:hover {
+        transform: scale(1.03) rotate(1deg);
+        box-shadow: 0 0 0 8px #00ff99cc, 0 0 40px #00ff9977, 0 0 60px #00ff9944;
+    }
+}
+
+@media (max-width: 480px) {
+    .creator-photo {
+        border-width: 2px;
+        box-shadow: 0 0 0 4px #00ff99cc, 0 0 20px #00ff9955;
+    }
+    
+    .creator-photo:hover {
+        transform: scale(1.02) rotate(0.5deg);
+        box-shadow: 0 0 0 6px #00ff99cc, 0 0 30px #00ff9977, 0 0 40px #00ff9944;
+    }
+}
+
+@media (max-width: 360px) {
+    .creator-photo {
+        border-width: 2px;
+        box-shadow: 0 0 0 3px #00ff99cc, 0 0 15px #00ff9955;
+    }
+    
+    .creator-photo:hover {
+        transform: scale(1.01);
+        box-shadow: 0 0 0 4px #00ff99cc, 0 0 20px #00ff9977, 0 0 30px #00ff9944;
+    }
+}
+
 /* Улучшенная анимация свечения */
 @keyframes glow {
     from { 
@@ -390,6 +429,43 @@ body::before, body::after {
     transform: translateY(-8px);
     box-shadow: 0 16px 48px #0007, 0 0 0 2px rgba(0, 255, 153, 0.2);
     border: 1px solid rgba(0, 255, 153, 0.3);
+}
+
+/* Адаптивные стили для блока создателя на мобильных */
+@media (max-width: 600px) {
+    .creator-block {
+        backdrop-filter: blur(10px);
+        box-shadow: 0 6px 24px #0005, 0 0 0 1px rgba(0, 255, 153, 0.1);
+    }
+    
+    .creator-block:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 36px #0007, 0 0 0 2px rgba(0, 255, 153, 0.2);
+    }
+}
+
+@media (max-width: 480px) {
+    .creator-block {
+        backdrop-filter: blur(8px);
+        box-shadow: 0 4px 20px #0005, 0 0 0 1px rgba(0, 255, 153, 0.1);
+    }
+    
+    .creator-block:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px #0007, 0 0 0 2px rgba(0, 255, 153, 0.2);
+    }
+}
+
+@media (max-width: 360px) {
+    .creator-block {
+        backdrop-filter: blur(6px);
+        box-shadow: 0 3px 16px #0005, 0 0 0 1px rgba(0, 255, 153, 0.1);
+    }
+    
+    .creator-block:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 24px #0007, 0 0 0 2px rgba(0, 255, 153, 0.2);
+    }
 }
 
 /* Улучшенный shimmer эффект */
@@ -444,6 +520,43 @@ body::before, body::after {
 .creator-name:hover {
     text-shadow: 0 0 12px #00ff99, 0 0 4px #fff, 0 0 20px #00ff9977;
     transform: scale(1.05);
+}
+
+/* Адаптивные стили для текста на мобильных */
+@media (max-width: 600px) {
+    .creator-title:hover {
+        transform: scale(1.01);
+        text-shadow: 0 2px 12px #00ff9977, 0 0 20px #00ff9944;
+    }
+    
+    .creator-name:hover {
+        transform: scale(1.02);
+        text-shadow: 0 0 8px #00ff99, 0 0 2px #fff, 0 0 12px #00ff9977;
+    }
+}
+
+@media (max-width: 480px) {
+    .creator-title:hover {
+        transform: scale(1.005);
+        text-shadow: 0 1px 8px #00ff9977, 0 0 12px #00ff9944;
+    }
+    
+    .creator-name:hover {
+        transform: scale(1.01);
+        text-shadow: 0 0 6px #00ff99, 0 0 1px #fff, 0 0 8px #00ff9977;
+    }
+}
+
+@media (max-width: 360px) {
+    .creator-title:hover {
+        transform: none;
+        text-shadow: 0 1px 6px #00ff9977, 0 0 8px #00ff9944;
+    }
+    
+    .creator-name:hover {
+        transform: none;
+        text-shadow: 0 0 4px #00ff99, 0 0 1px #fff, 0 0 6px #00ff9977;
+    }
 }
 
 /* Улучшенные hover эффекты для features */
@@ -647,6 +760,7 @@ body::before, body::after {
 /* Улучшенные переходы для всех интерактивных элементов */
 * {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-sizing: border-box;
 }
 
 /* Специальные переходы для анимаций */
@@ -964,93 +1078,6 @@ body::before, body::after {
 .creator-header::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
 }
-.creator-block {
-    background: rgba(20,24,60,0.75);
-    border-radius: 32px;
-    box-shadow: 0 8px 32px #0005, 0 0 0 1px rgba(0, 255, 153, 0.1);
-    padding: 48px 40px 40px 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 24px;
-    max-width: 450px;
-    width: 100%;
-    margin: 0 auto;
-    animation: fadein 1.2s;
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    position: relative;
-    z-index: 3;
-    overflow: hidden;
-}
-
-.creator-block::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, transparent 30%, rgba(0, 255, 153, 0.05) 50%, transparent 70%);
-    animation: shimmer 3s infinite;
-    pointer-events: none;
-}
-
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-@keyframes fadein {
-    from { opacity: 0; transform: translateY(-30px); }
-    to { opacity: 1; transform: none; }
-}
-.creator-photo {
-    width: 400px;
-    height: 440px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center 50%;
-    box-shadow: 0 0 0 8px #00ff99cc, 0 0 40px #00ff9955;
-    border: 4px solid #fff3;
-    margin-bottom: 16px;
-    background: #222;
-    animation: glow 2.5s infinite alternate;
-}
-@keyframes glow {
-    from { box-shadow: 0 0 0 8px #00ff99cc, 0 0 40px #00ff9955; }
-    to { box-shadow: 0 0 0 16px #00ff9955, 0 0 60px #00ff9922; }
-}
-.creator-title {
-    font-size: 2.7rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 8px;
-    color: #fff;
-    text-shadow: 0 2px 16px #00ff9955;
-    animation: fadein 1.2s;
-}
-.creator-name {
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    color: #fff;
-    text-shadow: 0 0 8px #00ff99, 0 0 2px #fff;
-    margin-bottom: 6px;
-    animation: fadein 1.6s 0.2s both;
-}
-.creator-slogan {
-    font-size: 1.13rem;
-    color: #00ff99;
-    margin-bottom: 0;
-    font-weight: 400;
-    letter-spacing: 0.5px;
-    text-align: center;
-    animation: fadein 1.8s 0.4s both;
-}
 /* --- Кастомный анимированный скроллбар для всего сайта --- */
 /* УДАЛЕНО: body::-webkit-scrollbar, body::-webkit-scrollbar-thumb, body::-webkit-scrollbar-track, @keyframes scrollbar-glow */
 /* Firefox */
@@ -1129,27 +1156,53 @@ html {
     .telegram span {
         display: none;
     }
+    
+    /* Адаптация карточки создателя для мобильных */
+    .creator-header {
+        min-height: 100vh;
+        height: 100vh;
+        padding: 20px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
     .creator-block {
-        padding: 32px 24px 24px 24px;
-        max-width: 92vw;
-        gap: 20px;
-        margin: 0 16px;
+        padding: 20px 16px 16px 16px;
+        max-width: calc(100vw - 48px);
+        width: calc(100vw - 48px);
+        gap: 16px;
+        margin: 0;
+        border-radius: 20px;
     }
+    
     .creator-photo {
-        width: 280px;
-        height: 308px;
+        width: 160px;
+        height: 160px;
         border-radius: 50%;
+        margin-bottom: 12px;
     }
+    
     .creator-title {
-        font-size: 2rem;
+        font-size: 1.6rem;
+        letter-spacing: 0.8px;
+        margin-bottom: 6px;
     }
+    
     .creator-name {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        letter-spacing: 0.8px;
+        margin-bottom: 4px;
+    }
+    
+    .creator-slogan {
+        font-size: 0.95rem;
+        letter-spacing: 0.2px;
     }
     
     /* Адаптация для всех карточек на мобильных */
     .container {
-        padding: 24px 16px 16px 16px;
+        padding: 20px 16px 16px 16px;
     }
     
     .feature {
@@ -1290,34 +1343,51 @@ html {
 
 /* Дополнительные медиа-запросы для карточки */
 @media (max-width: 480px) {
+    .creator-header {
+        min-height: 100vh;
+        height: 100vh;
+        padding: 16px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
     .creator-block {
-        padding: 24px 20px 20px 20px;
-        max-width: 90vw;
-        gap: 18px;
-        margin: 0 20px;
+        padding: 16px 12px 12px 12px;
+        max-width: calc(100vw - 40px);
+        width: calc(100vw - 40px);
+        gap: 14px;
+        margin: 0;
+        border-radius: 18px;
     }
     
     .creator-photo {
-        width: 220px;
-        height: 242px;
+        width: 140px;
+        height: 140px;
         border-radius: 50%;
+        margin-bottom: 10px;
     }
     
     .creator-title {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
+        letter-spacing: 0.6px;
+        margin-bottom: 4px;
     }
     
     .creator-name {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.6px;
+        margin-bottom: 3px;
     }
     
     .creator-slogan {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        letter-spacing: 0.1px;
     }
     
     /* Дополнительные отступы для маленьких экранов */
     .container {
-        padding: 20px 12px 12px 12px;
+        padding: 16px 12px 12px 12px;
     }
     
     .feature {
@@ -1335,34 +1405,51 @@ html {
 }
 
 @media (max-width: 360px) {
+    .creator-header {
+        min-height: 100vh;
+        height: 100vh;
+        padding: 12px 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
     .creator-block {
-        padding: 20px 16px 16px 16px;
-        max-width: 88vw;
-        gap: 16px;
-        margin: 0 24px;
+        padding: 12px 8px 8px 8px;
+        max-width: calc(100vw - 32px);
+        width: calc(100vw - 32px);
+        gap: 12px;
+        margin: 0;
+        border-radius: 16px;
     }
     
     .creator-photo {
-        width: 180px;
-        height: 198px;
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
+        margin-bottom: 8px;
     }
     
     .creator-title {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 3px;
     }
     
     .creator-name {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
     }
     
     .creator-slogan {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.1px;
     }
     
     /* Минимальные отступы для очень маленьких экранов */
     .container {
-        padding: 16px 8px 8px 8px;
+        padding: 12px 8px 8px 8px;
     }
     
     .feature {
@@ -1379,27 +1466,70 @@ html {
     }
 }
 
-/* Магнитный эффект для фото */
-.creator-photo {
-    width: 400px;
-    height: 440px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center 50%;
-    box-shadow: 0 0 0 8px #00ff99cc, 0 0 40px #00ff9955;
-    border: 4px solid #fff3;
-    margin-bottom: 16px;
-    background: #222;
-    animation: glow 2.5s infinite alternate;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    will-change: transform;
+/* Дополнительные стили для очень маленьких экранов */
+@media (max-width: 320px) {
+    .creator-header {
+        min-height: 100vh;
+        height: 100vh;
+        padding: 10px 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .creator-block {
+        padding: 10px 6px 6px 6px;
+        max-width: calc(100vw - 24px);
+        width: calc(100vw - 24px);
+        gap: 10px;
+        margin: 0;
+        border-radius: 14px;
+    }
+    
+    .creator-photo {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 6px;
+    }
+    
+    .creator-title {
+        font-size: 1rem;
+        letter-spacing: 0.4px;
+        margin-bottom: 2px;
+    }
+    
+    .creator-name {
+        font-size: 0.9rem;
+        letter-spacing: 0.4px;
+        margin-bottom: 2px;
+    }
+    
+    .creator-slogan {
+        font-size: 0.8rem;
+        letter-spacing: 0.1px;
+    }
+    
+    .container {
+        padding: 10px 6px 6px 6px;
+    }
+    
+    .feature {
+        margin: 0 3px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .app-description,
+    .app-updates,
+    .testimonials {
+        margin: 14px 3px 0 3px !important;
+        padding: 14px 12px !important;
+    }
 }
 
-.creator-photo:hover {
-    transform: scale(1.05) rotate(2deg);
-    box-shadow: 0 0 0 12px #00ff99cc, 0 0 60px #00ff9977, 0 0 100px #00ff9944;
-}
+/* Магнитный эффект для фото */
+
 
 /* Улучшенные кнопки с градиентными эффектами */
 .telegram {
