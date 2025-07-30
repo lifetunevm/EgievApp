@@ -1,1 +1,31 @@
-{ "status": "ok" }
+{
+  "status": "healthy",
+  "timestamp": "2024-12-19T12:00:00Z",
+  "version": "1.2",
+  "app": {
+    "name": "LifeTune (Лайфтюн)",
+    "developer": "Egiev Magomed",
+    "category": "Health & Fitness",
+    "platform": "Android",
+    "download_url": "https://www.rustore.ru/catalog/app/com.example.lifetune"
+  },
+  "website": {
+    "url": "https://lifetune.app/",
+    "title": "LifeTune (Лайфтюн) — трекер сна и привычек от Эгиева Магомеда",
+    "description": "Лучший трекер сна и привычек от разработчика Эгиева Магомеда",
+    "keywords": ["лайфтюн", "LifeTune", "трекер сна", "эгиев магомед", "трекер привычек"]
+  },
+  "features": [
+    "Трекер привычек и целей",
+    "Анализ и статистика сна", 
+    "Фитнес и тренировки",
+    "Умные напоминания и планировщик",
+    "Ведение заметок и дневника",
+    "Голосовой ассистент для быстрого управления",
+    "Мотивационные цитаты и поддержка"
+  ],
+  "contact": {
+    "email": "lifetunesup@gmail.com",
+    "telegram": "https://t.me/lnterlla"
+  }
+}

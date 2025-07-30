@@ -6,4 +6,13 @@ Sitemap: https://lifetune.app/sitemap.xml
 
 # Disallow admin areas (if any)
 Disallow: /admin/
-Disallow: /private/ 
+Disallow: /private/
+
+# Allow important files
+Allow: /health.json
+Allow: /style.css
+Allow: /Images/
+Allow: /logo/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1 
