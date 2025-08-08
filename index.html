@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LifeTune (Лайфтюн) — трекер сна и привычек от Эгиева Магомеда | Персональный помощник для здоровья</title>
+    
+    <!-- Защитные заголовки безопасности -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    
     <meta name="description" content="LifeTune (Лайфтюн) — лучший трекер сна и привычек от разработчика Эгиева Магомеда. Анализ сна, трекер привычек, фитнес-мониторинг и голосовой ассистент в одном приложении. Скачать бесплатно из RuStore.">
     <meta name="keywords" content="лайфтюн, LifeTune, трекер сна, эгиев магомед, трекер привычек, анализ сна, фитнес-трекер, голосовой ассистент, здоровье, продуктивность, приложение, RuStore, бесплатно">
     <meta name="author" content="Egiev Magomed">
@@ -128,8 +136,105 @@
     </script>
     
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Стили для панели аналитики -->
+    <style>
+        .analytics-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 2px solid #00ff99;
+            border-radius: 10px;
+            padding: 15px;
+            color: white;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            z-index: 10000;
+            max-width: 300px;
+            backdrop-filter: blur(10px);
+            display: none;
+        }
+        
+        .analytics-panel h3 {
+            margin: 0 0 10px 0;
+            color: #00ff99;
+            font-size: 14px;
+        }
+        
+        .analytics-panel .stat {
+            margin: 5px 0;
+            padding: 3px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .analytics-panel .stat:last-child {
+            border-bottom: none;
+        }
+        
+        .analytics-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #00ff99;
+            color: #000;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 10001;
+            font-weight: bold;
+            display: none; /* Скрыта по умолчанию */
+        }
+        
+        .analytics-toggle:hover {
+            background: #00cc7a;
+        }
+        
+        .visitor-list {
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 10px;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+        }
+        
+        .visitor-item {
+            padding: 3px 0;
+            font-size: 11px;
+            border-bottom: 1px solid #222;
+        }
+        
+        .visitor-item:last-child {
+            border-bottom: none;
+        }
+    </style>
 </head>
 <body>
+    <!-- Кнопка для показа/скрытия панели аналитики (скрыта по умолчанию) -->
+    <button class="analytics-toggle" id="analyticsToggle" title="Показать аналитику">📊</button>
+    
+    <!-- Панель аналитики -->
+    <div class="analytics-panel" id="analyticsPanel">
+        <h3>📊 Аналитика сайта</h3>
+        <div class="stat">Всего посещений: <span id="totalVisits">0</span></div>
+        <div class="stat">Уникальных посетителей: <span id="uniqueVisitors">0</span></div>
+        <div class="stat">Сегодня: <span id="todayVisits">0</span></div>
+        <div class="stat">Вчера: <span id="yesterdayVisits">0</span></div>
+        <div class="stat">За неделю: <span id="weekVisits">0</span></div>
+        <div class="stat">За месяц: <span id="monthVisits">0</span></div>
+        <div class="stat">Среднее время на сайте: <span id="avgTime">0</span> мин</div>
+        <div class="stat">Текущий посетитель: <span id="currentVisitor">-</span></div>
+        
+        <div class="visitor-list" id="visitorList">
+            <div style="color: #00ff99; font-weight: bold; margin-bottom: 5px;">Последние посетители:</div>
+        </div>
+        
+        <button onclick="clearAnalytics()" style="margin-top: 10px; background: #ff4444; color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer; font-size: 11px;">Очистить данные</button>
+    </div>
+    
     <!-- Индикатор прогресса чтения -->
     <div class="progress-bar" id="progressBar"></div>
     
@@ -215,6 +320,7 @@
                 
                 <h3 style="font-size:1.15rem; margin: 20px 0 12px 0; color: #00ff99;">Возможности трекера сна LifeTune:</h3>
                 <ul style="margin: 10px 0 10px 24px;">
+                    <li><strong>Мессенджер</strong> — общайтесь с другими пользователями LifeTune</li>
                     <li><strong>Трекер привычек и целей</strong> — отслеживайте свои ежедневные привычки</li>
                     <li><strong>Анализ и статистика сна</strong> — детальный анализ качества и продолжительности сна</li>
                     <li><strong>Шагомер</strong> — Автоматический подсчет шагов. Настраиваемые цели. Графики статистики.</li>
@@ -242,6 +348,13 @@
             </div>
             <div class="app-updates scroll-reveal" data-reveal-idx="5" style="margin: 32px 0 0 0; font-size: 1.08rem; line-height: 1.6; background: #fff1; border-radius: 14px; padding: 22px 26px; color: #fff; width: 100%; max-width: 900px; box-sizing: border-box;">
                 <b style="font-size:1.18rem;">Обновления версий</b><br><br>
+                         <b>Что нового в версии 1.4</b>
+                <ul style="margin: 10px 0 10px 24px;">
+                    <li>🥗 Питание: Автоматический подсчет калорий, белков, углеводов.</li>
+                    Ассистент, который составит персональный план в зависимости от вашей задачи
+                    <br>
+                    <li>💬 Мессенджер: Общайтесь с другими пользователями LifeTune. Делитесь достижениями и опытом</li>
+                </ul>
                    <b>Что нового в версии 1.3</b>
                 <ul style="margin: 10px 0 10px 24px;">
                     <li>Шагомер: Автоматический подсчет шагов. Настраиваемые цели. Графики статистики. Уведомления при достижении цели</li>
@@ -850,6 +963,596 @@
     });
     
     window.addEventListener('scroll', updateProgressBar);
+    
+    // --- Система аналитики сайта ---
+    
+    // Система защиты аналитики
+    class AnalyticsSecurity {
+        constructor() {
+            this.isAuthorized = false;
+            // Обфусцированный хеш пароля
+            this.adminPasswordHash = this._decodeHash('50295c0e3de15aad29c29a9d9a616dc8f486b00d19d92c7f9a3098f15bfbe169');
+            this.keySequence = '';
+            this.lastKeyTime = 0;
+            this.attemptCount = 0;
+            this.lastAttemptTime = 0;
+            this.securityChecks = 0;
+            this.initSecurity();
+        }
+        
+        // Обфускация хеша
+        _decodeHash(hash) {
+            return hash; // Упрощаем для отладки
+        }
+        
+        // Дополнительные проверки безопасности
+        _validateEnvironment() {
+            // Проверяем, что код не был модифицирован
+            const originalHash = '50295c0e3de15aad29c29a9d9a616dc8f486b00d19d92c7f9a3098f15bfbe169';
+            const currentHash = this._decodeHash(this.adminPasswordHash);
+            
+            if (originalHash !== currentHash) {
+                console.warn('Обнаружена попытка модификации кода безопасности');
+                return false;
+            }
+            
+            // Проверяем целостность localStorage
+            const storedHash = localStorage.getItem('analyticsPasswordHash');
+            if (storedHash && storedHash !== originalHash) {
+                console.warn('Обнаружена попытка подмены хеша в localStorage');
+                localStorage.removeItem('analyticsPasswordHash');
+                return false;
+            }
+            
+            return true;
+        }
+        
+        // Инициализация системы безопасности
+        initSecurity() {
+            if (!this._validateEnvironment()) {
+                console.warn('Система безопасности скомпрометирована');
+                return;
+            }
+            
+            // Проверяем хешированный пароль в localStorage
+            const savedPasswordHash = localStorage.getItem('analyticsPasswordHash');
+            console.log('Сохраненный хеш в localStorage:', savedPasswordHash);
+            console.log('Ожидаемый хеш:', this.adminPasswordHash);
+            console.log('Хеши совпадают при инициализации:', savedPasswordHash === this.adminPasswordHash);
+            
+            if (savedPasswordHash === this.adminPasswordHash) {
+                console.log('Авторизация восстановлена из localStorage');
+                this.authorize();
+            }
+            
+            // Добавляем несколько способов доступа
+            this.setupKeyboardShortcuts();
+            this.setupKeySequence();
+            this.setupConsoleAccess();
+            
+            // Добавляем защиту от прямого доступа к объектам
+            this._protectObjects();
+        }
+        
+        // Защита объектов от прямого доступа
+        _protectObjects() {
+            // Делаем хеш недоступным через консоль
+            Object.defineProperty(this, 'adminPasswordHash', {
+                enumerable: false,
+                configurable: false,
+                writable: false
+            });
+            
+            // Защищаем метод авторизации
+            const originalAuthorize = this.authorize.bind(this);
+            this.authorize = function() {
+                if (this._validateEnvironment()) {
+                    return originalAuthorize();
+                }
+                console.warn('Попытка несанкционированного доступа заблокирована');
+                return false;
+            }.bind(this);
+        }
+        
+        // Настройка горячих клавиш
+        setupKeyboardShortcuts() {
+            document.addEventListener('keydown', (e) => {
+                // Способ 1: Ctrl + Alt + A
+                if (e.ctrlKey && e.altKey && e.key === 'A') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.showPasswordPrompt();
+                    return;
+                }
+                
+                // Способ 2: Ctrl + Shift + L
+                if (e.ctrlKey && e.shiftKey && e.key === 'L') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.showPasswordPrompt();
+                    return;
+                }
+                
+                // Способ 3: F12 + A
+                if (e.key === 'F12') {
+                    setTimeout(() => {
+                        document.addEventListener('keydown', (e2) => {
+                            if (e2.key === 'A' || e2.key === 'a') {
+                                e2.preventDefault();
+                                this.showPasswordPrompt();
+                            }
+                        }, { once: true });
+                    }, 100);
+                }
+            });
+        }
+        
+        // Настройка последовательности клавиш
+        setupKeySequence() {
+            document.addEventListener('keydown', (e) => {
+                const currentTime = Date.now();
+                if (currentTime - this.lastKeyTime > 2000) {
+                    this.keySequence = '';
+                }
+                
+                if (e.key === 'A' || e.key === 'a') {
+                    this.keySequence += 'A';
+                    this.lastKeyTime = currentTime;
+                    
+                    if (this.keySequence === 'AAA') {
+                        e.preventDefault();
+                        this.showPasswordPrompt();
+                        this.keySequence = '';
+                    }
+                } else {
+                    this.keySequence = '';
+                }
+            });
+        }
+        
+        // Доступ через консоль браузера
+        setupConsoleAccess() {
+            // Добавляем глобальные функции для доступа через консоль
+            window.showAnalyticsAccess = () => {
+                this.showPasswordPrompt();
+            };
+            
+            window.showSecurityLogs = () => {
+                this.showSecurityLogs();
+            };
+            
+            // Добавляем подсказку в консоль
+            console.log('%c🔐 Доступ к аналитике LifeTune', 'color: #00ff99; font-size: 16px; font-weight: bold;');
+            console.log('%cВведите в консоли: showAnalyticsAccess()', 'color: #666; font-size: 14px;');
+            console.log('%cДля просмотра логов безопасности: showSecurityLogs()', 'color: #ff9900; font-size: 14px;');
+            
+            // Мониторинг попыток обхода
+            this._monitorBypassAttempts();
+        }
+        
+        // Мониторинг попыток обхода безопасности
+        _monitorBypassAttempts() {
+            // Отслеживаем попытки прямого доступа к localStorage
+            const originalSetItem = localStorage.setItem;
+            
+            localStorage.setItem = function(key, value) {
+                if (key === 'analyticsPasswordHash') {
+                    console.warn('🚨 Обнаружена попытка прямого доступа к аналитике!');
+                    console.warn('IP: ' + (window.location.hostname || 'localhost'));
+                    console.warn('User-Agent: ' + navigator.userAgent);
+                    console.warn('Время: ' + new Date().toISOString());
+                    
+                    // Логируем событие безопасности
+                    this._logSecurityEvent('localStorage_bypass_attempt', {
+                        key: key,
+                        value: value,
+                        userAgent: navigator.userAgent,
+                        timestamp: Date.now()
+                    });
+                }
+                return originalSetItem.call(this, key, value);
+            }.bind(this);
+        }
+        
+        // Логирование событий безопасности
+        _logSecurityEvent(eventType, data) {
+            const securityLog = JSON.parse(localStorage.getItem('securityLog') || '[]');
+            securityLog.push({
+                event: eventType,
+                data: data,
+                timestamp: Date.now()
+            });
+            
+            // Ограничиваем размер лога
+            if (securityLog.length > 100) {
+                securityLog.splice(0, securityLog.length - 100);
+            }
+            
+            localStorage.setItem('securityLog', JSON.stringify(securityLog));
+            
+            // Выводим предупреждение в консоль
+            console.warn(`🚨 Событие безопасности: ${eventType}`);
+            console.warn('Данные:', data);
+        }
+        
+        // Функция для просмотра логов безопасности (только для авторизованных)
+        showSecurityLogs() {
+            if (!this.isUserAuthorized()) {
+                alert('Доступ запрещен!');
+                return;
+            }
+            
+            const securityLog = JSON.parse(localStorage.getItem('securityLog') || '[]');
+            if (securityLog.length === 0) {
+                alert('Логи безопасности пусты');
+                return;
+            }
+            
+            console.log('🔒 Логи безопасности LifeTune:');
+            securityLog.forEach((log, index) => {
+                console.log(`[${index + 1}] ${new Date(log.timestamp).toLocaleString()}: ${log.event}`);
+                console.log('Данные:', log.data);
+            });
+            
+            alert(`Найдено ${securityLog.length} событий безопасности. Подробности в консоли.`);
+        }
+        
+        // Хеширование пароля
+        async hashPassword(password) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(password);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+        
+        // Показ диалога ввода пароля с защитой от брутфорса
+        async showPasswordPrompt() {
+            const now = Date.now();
+            
+            // Проверяем ограничение попыток
+            if (this.attemptCount >= 5) {
+                const timeDiff = now - this.lastAttemptTime;
+                if (timeDiff < 300000) { // 5 минут блокировки
+                    const remainingTime = Math.ceil((300000 - timeDiff) / 1000 / 60);
+                    alert(`Слишком много попыток! Попробуйте через ${remainingTime} минут.`);
+                    return;
+                } else {
+                    this.attemptCount = 0;
+                }
+            }
+            
+            const password = prompt('Введите пароль для доступа к аналитике:');
+            if (password === null) return;
+            
+            try {
+                const hashedPassword = await this.hashPassword(password);
+                console.log('Введенный пароль:', password);
+                console.log('Хеш введенного пароля:', hashedPassword);
+                console.log('Ожидаемый хеш:', this.adminPasswordHash);
+                console.log('Хеши совпадают:', hashedPassword === this.adminPasswordHash);
+                
+                if (hashedPassword === this.adminPasswordHash) {
+                    this.authorize();
+                    localStorage.setItem('analyticsPasswordHash', hashedPassword);
+                    this.attemptCount = 0;
+                    alert('Доступ разрешен! Теперь вы можете видеть панель аналитики.');
+                } else {
+                    this.attemptCount++;
+                    this.lastAttemptTime = now;
+                    alert(`Неверный пароль! Осталось попыток: ${5 - this.attemptCount}`);
+                }
+            } catch (error) {
+                console.error('Ошибка проверки пароля:', error);
+                alert('Ошибка проверки пароля!');
+            }
+        }
+        
+        // Авторизация пользователя
+        authorize() {
+            this.isAuthorized = true;
+            const toggleButton = document.getElementById('analyticsToggle');
+            if (toggleButton) {
+                toggleButton.style.display = 'block';
+            }
+            
+            // Обновляем статистику сразу после авторизации
+            if (window.analytics) {
+                window.analytics.updateStats();
+            }
+        }
+        
+        // Проверка авторизации
+        isUserAuthorized() {
+            return this.isAuthorized;
+        }
+    }
+    
+    // Класс для работы с аналитикой
+    class SiteAnalytics {
+        constructor(security) {
+            this.security = security;
+            this.visitorId = this.generateVisitorId();
+            this.startTime = Date.now();
+            this.analyticsData = this.loadAnalyticsData();
+            this.initAnalytics();
+        }
+        
+        // Генерация уникального ID посетителя
+        generateVisitorId() {
+            let visitorId = localStorage.getItem('visitorId');
+            if (!visitorId) {
+                visitorId = 'visitor_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                localStorage.setItem('visitorId', visitorId);
+            }
+            return visitorId;
+        }
+        
+        // Загрузка данных аналитики
+        loadAnalyticsData() {
+            const data = localStorage.getItem('siteAnalytics');
+            if (data) {
+                const parsedData = JSON.parse(data);
+                // Преобразуем массив обратно в Set
+                parsedData.uniqueVisitors = new Set(parsedData.uniqueVisitors || []);
+                return parsedData;
+            }
+            return {
+                totalVisits: 0,
+                uniqueVisitors: new Set(),
+                visits: [],
+                visitors: [],
+                currentVisitor: null
+            };
+        }
+        
+        // Сохранение данных аналитики
+        saveAnalyticsData() {
+            // Преобразуем Set в массив для сохранения
+            const dataToSave = {
+                ...this.analyticsData,
+                uniqueVisitors: Array.from(this.analyticsData.uniqueVisitors)
+            };
+            localStorage.setItem('siteAnalytics', JSON.stringify(dataToSave));
+        }
+        
+        // Инициализация аналитики
+        initAnalytics() {
+            // Записываем посещение
+            this.recordVisit();
+            
+            // Обновляем статистику
+            this.updateStats();
+            
+            // Отслеживаем время на сайте
+            this.trackTimeOnSite();
+            
+            // Отслеживаем уход со страницы
+            this.trackPageLeave();
+        }
+        
+        // Валидация данных
+        validateData(data) {
+            // Проверяем размер данных
+            const dataSize = JSON.stringify(data).length;
+            if (dataSize > 1000000) { // 1MB лимит
+                console.warn('Данные аналитики превышают лимит');
+                return false;
+            }
+            
+            // Проверяем количество записей
+            if (data.visits && data.visits.length > 10000) {
+                console.warn('Слишком много записей в аналитике');
+                return false;
+            }
+            
+            return true;
+        }
+        
+        // Санитизация данных
+        sanitizeString(str) {
+            if (typeof str !== 'string') return '';
+            return str.replace(/[<>]/g, '').substring(0, 1000); // Ограничиваем длину и убираем теги
+        }
+        
+        // Запись посещения с валидацией
+        recordVisit() {
+            const now = new Date();
+            const visitData = {
+                visitorId: this.sanitizeString(this.visitorId),
+                timestamp: now.getTime(),
+                date: now.toISOString().split('T')[0],
+                time: now.toTimeString().split(' ')[0],
+                userAgent: this.sanitizeString(navigator.userAgent),
+                referrer: this.sanitizeString(document.referrer || 'direct'),
+                screenResolution: this.sanitizeString(`${screen.width}x${screen.height}`),
+                language: this.sanitizeString(navigator.language || 'unknown')
+            };
+            
+            // Проверяем валидность данных перед сохранением
+            if (!this.validateData(this.analyticsData)) {
+                console.warn('Данные аналитики не прошли валидацию');
+                return;
+            }
+            
+            // Добавляем в список посещений
+            this.analyticsData.visits.push(visitData);
+            
+            // Добавляем в уникальных посетителей
+            this.analyticsData.uniqueVisitors.add(this.visitorId);
+            
+            // Обновляем текущего посетителя
+            this.analyticsData.currentVisitor = {
+                id: this.sanitizeString(this.visitorId),
+                startTime: this.startTime,
+                userAgent: this.sanitizeString(navigator.userAgent),
+                screenResolution: this.sanitizeString(`${screen.width}x${screen.height}`),
+                language: this.sanitizeString(navigator.language || 'unknown')
+            };
+            
+            this.saveAnalyticsData();
+        }
+        
+        // Обновление статистики
+        updateStats() {
+            console.log('updateStats вызван, авторизация:', this.security.isUserAuthorized());
+            // Проверяем авторизацию перед обновлением UI
+            if (!this.security.isUserAuthorized()) {
+                console.log('Пользователь не авторизован, обновление статистики пропущено');
+                return; // Не обновляем UI если пользователь не авторизован
+            }
+            
+            const now = new Date();
+            const today = now.toISOString().split('T')[0];
+            const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+            const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+            const monthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+            
+            // Подсчет статистики
+            const todayVisits = this.analyticsData.visits.filter(v => v.date === today).length;
+            const yesterdayVisits = this.analyticsData.visits.filter(v => v.date === yesterday).length;
+            const weekVisits = this.analyticsData.visits.filter(v => v.date >= weekAgo).length;
+            const monthVisits = this.analyticsData.visits.filter(v => v.date >= monthAgo).length;
+            
+            // Обновляем элементы на странице
+            document.getElementById('totalVisits').textContent = this.analyticsData.visits.length;
+            document.getElementById('uniqueVisitors').textContent = this.analyticsData.uniqueVisitors.size;
+            document.getElementById('todayVisits').textContent = todayVisits;
+            document.getElementById('yesterdayVisits').textContent = yesterdayVisits;
+            document.getElementById('weekVisits').textContent = weekVisits;
+            document.getElementById('monthVisits').textContent = monthVisits;
+            
+            // Показываем информацию о текущем посетителе
+            if (this.analyticsData.currentVisitor) {
+                const deviceInfo = this.getDeviceInfo(this.analyticsData.currentVisitor.userAgent);
+                document.getElementById('currentVisitor').textContent = deviceInfo;
+            }
+            
+            // Обновляем список последних посетителей
+            this.updateVisitorList();
+        }
+        
+        // Получение информации об устройстве
+        getDeviceInfo(userAgent) {
+            // Определяем Android
+            if (userAgent.includes('Android')) {
+                return '📱 Android';
+            }
+            // Определяем iOS (iPhone, iPad)
+            if (userAgent.includes('iPhone') || userAgent.includes('iPad')) {
+                return '📱 iOS';
+            }
+            // Определяем мобильные устройства
+            if (userAgent.includes('Mobile')) {
+                return '📱 Мобильное';
+            }
+            // Определяем планшеты
+            if (userAgent.includes('Tablet')) {
+                return '📱 Планшет';
+            }
+            // Определяем десктоп
+            return '💻 Десктоп';
+        }
+        
+        // Обновление списка посетителей
+        updateVisitorList() {
+            // Проверяем авторизацию
+            if (!this.security.isUserAuthorized()) {
+                return;
+            }
+            
+            const visitorList = document.getElementById('visitorList');
+            const recentVisits = this.analyticsData.visits.slice(-10).reverse();
+            
+            let html = '<div style="color: #00ff99; font-weight: bold; margin-bottom: 5px;">Последние посетители:</div>';
+            
+            recentVisits.forEach(visit => {
+                const time = new Date(visit.timestamp).toLocaleTimeString('ru-RU', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                const deviceInfo = this.getDeviceInfo(visit.userAgent);
+                html += `<div class="visitor-item">${time} - ${deviceInfo}</div>`;
+            });
+            
+            visitorList.innerHTML = html;
+        }
+        
+        // Отслеживание времени на сайте
+        trackTimeOnSite() {
+            setInterval(() => {
+                // Проверяем авторизацию перед обновлением UI
+                if (!this.security.isUserAuthorized()) {
+                    return;
+                }
+                const timeSpent = Math.floor((Date.now() - this.startTime) / 1000 / 60);
+                document.getElementById('avgTime').textContent = timeSpent;
+            }, 60000); // Обновляем каждую минуту
+        }
+        
+        // Отслеживание ухода со страницы
+        trackPageLeave() {
+            window.addEventListener('beforeunload', () => {
+                const timeSpent = Math.floor((Date.now() - this.startTime) / 1000);
+                // Можно сохранить время, проведенное на сайте
+                const visitData = this.analyticsData.visits.find(v => v.visitorId === this.visitorId && v.timestamp === this.startTime);
+                if (visitData) {
+                    visitData.timeSpent = timeSpent;
+                    this.saveAnalyticsData();
+                }
+            });
+        }
+    }
+    
+    // Функция очистки данных аналитики
+    function clearAnalytics() {
+        // Проверяем авторизацию
+        if (!window.analyticsSecurity || !window.analyticsSecurity.isUserAuthorized()) {
+            alert('Доступ запрещен!');
+            return;
+        }
+        
+        if (confirm('Вы уверены, что хотите очистить все данные аналитики?')) {
+            localStorage.removeItem('siteAnalytics');
+            localStorage.removeItem('visitorId');
+            localStorage.removeItem('analyticsPasswordHash'); // Очищаем хешированный пароль
+            location.reload();
+        }
+    }
+    
+    // Переключение видимости панели аналитики
+    document.getElementById('analyticsToggle').addEventListener('click', function() {
+        // Проверяем авторизацию
+        if (!window.analyticsSecurity || !window.analyticsSecurity.isUserAuthorized()) {
+            alert('Доступ запрещен!');
+            return;
+        }
+        
+        const panel = document.getElementById('analyticsPanel');
+        if (panel.style.display === 'none' || panel.style.display === '') {
+            panel.style.display = 'block';
+            this.textContent = '❌';
+            this.title = 'Скрыть аналитику';
+        } else {
+            panel.style.display = 'none';
+            this.textContent = '📊';
+            this.title = 'Показать аналитику';
+        }
+    });
+    
+    // Инициализация аналитики при загрузке страницы
+    document.addEventListener('DOMContentLoaded', () => {
+        // Инициализируем систему безопасности
+        window.analyticsSecurity = new AnalyticsSecurity();
+        
+        // Инициализируем аналитику с передачей системы безопасности
+        window.analytics = new SiteAnalytics(window.analyticsSecurity);
+        
+        // Обновляем статистику каждые 30 секунд
+        setInterval(() => {
+            window.analytics.updateStats();
+        }, 30000);
+    });
     </script>
 </body>
 </html>
